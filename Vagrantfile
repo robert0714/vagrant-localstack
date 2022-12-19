@@ -33,11 +33,12 @@ Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-22.04"
   config.vm.hostname = "localstack.local.dev"
 
-  config.vm.network :private_network, ip: "10.100.198.101"
-  config.vm.network :forwarded_port, guest: 8080, host: 8080
-  for i in 4567..4599
-    config.vm.network :forwarded_port, guest: i, host: i
-  end  
+  config.vm.network :private_network, ip: "10.100.198.101" 
+  config.vm.network :forwarded_port, guest: 4566, host: 4566
+  config.vm.network :forwarded_port, guest: 4571, host: 4571
+  # for i in 4566..4599
+  #   config.vm.network :forwarded_port, guest: i, host: i
+  # end  
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
     vb.name = "Localstack"

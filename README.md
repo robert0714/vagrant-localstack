@@ -6,8 +6,12 @@ Check the following URL for more info:
 - https://github.com/localstack/localstack
 
 ## Using Localstack
+```shell
+sudo docker run --rm -it -d -p 4566:4566 -p 4571:4571 --rm --privileged --memory 256M --name localstack_main localstack/localstack
+```
+or see 'https://github.com/localstack/localstack/blob/master/docker-compose.yml'
 
-LocalStack spins up the following core Cloud APIs on your local machine:
+### LocalStack spins up the following core Cloud APIs on your local machine:
 
 - API Gateway at http://localhost:4567
 - Kinesis at http://localhost:4568
